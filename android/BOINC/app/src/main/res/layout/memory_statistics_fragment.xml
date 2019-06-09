@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/LParent"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/GrayMyPlaces"
+              android:orientation="vertical">
+
+    <LinearLayout
+            style="@style/MainWindowArrangement"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+            <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingTop="15dp">
+
+
+                    <LinearLayout
+                            style="@style/ParameterRow"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="5dp">
+
+                        <TextView
+                                style="@style/FirstColumn"
+                                android:layout_marginLeft="0dp"
+                                android:singleLine="true"
+                                android:text="@string/p_memtotal"
+                                android:textColor="@color/shadow"
+                                android:textSize="22sp"
+                                android:textStyle="bold"/>
+
+                        <TextView
+                                android:id="@+id/TVMemTotal"
+                                style="@style/SecondColumn"
+                                android:text="@string/p_percentage"
+                                android:textColor="@color/shadow"
+                                android:textSize="22sp"
+                                android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:id="@+id/LMemUsed"
+                            style="@style/ParameterRow">
+
+                        <TextView
+                                style="@style/FirstColumn"
+                                android:text="@string/p_memused"
+                                android:textColor="@color/Orange"/>
+
+                        <TextView
+                                android:id="@+id/TVMemUsed"
+                                style="@style/SecondColumn"
+                                android:textColor="@color/Orange"/>
+
+                        <TextView
+                                android:id="@+id/TVMemUsedP"
+                                style="@style/ThirdColumn"
+                                android:textColor="@color/Orange"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:id="@+id/LMemAvailable"
+                            style="@style/ParameterRow">
+
+                        <TextView
+                                style="@style/FirstColumn"
+                                android:text="@string/p_memavailable"
+                                android:textColor="@color/Magenta"/>
+
+                        <TextView
+                                android:id="@+id/TVMemAvailable"
+                                style="@style/SecondColumn"
+                                android:textColor="@color/Magenta"/>
+
+                        <TextView
+                                android:id="@+id/TVMemAvailableP"
+                                style="@style/ThirdColumn"
+                                android:textColor="@color/Magenta"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:id="@+id/LMemFree"
+                            style="@style/ParameterRow">
+
+                        <TextView
+                                style="@style/FirstColumn"
+                                android:text="@string/p_memfree"
+                                android:textColor="#804000"/>
+
+                        <TextView
+                                android:id="@+id/TVMemFree"
+                                style="@style/SecondColumn"
+                                android:textColor="#804000"/>
+
+                        <TextView
+                                android:id="@+id/TVMemFreeP"
+                                style="@style/ThirdColumn"
+                                android:textColor="#804000"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:id="@+id/LCached"
+                            style="@style/ParameterRow">
+
+                        <TextView
+                                style="@style/FirstColumn"
+                                android:text="@string/p_cached"
+                                android:textColor="@color/blue"/>
+
+                        <TextView
+                                android:id="@+id/TVCached"
+                                style="@style/SecondColumn"
+                                android:textColor="@color/blue"/>
+
+                        <TextView
+                                android:id="@+id/TVCachedP"
+                                style="@style/ThirdColumn"
+                                android:textColor="@color/blue"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:id="@+id/LThreshold"
+                            style="@style/ParameterRow"
+                            android:paddingBottom="16dp">
+
+                        <TextView
+                                style="@style/FirstColumn"
+                                android:text="@string/p_threshold"
+                                android:textColor="@color/lime"/>
+
+                        <TextView
+                                android:id="@+id/TVThreshold"
+                                style="@style/SecondColumn"
+                                android:textColor="@color/lime"/>
+
+                        <TextView
+                                android:id="@+id/TVThresholdP"
+                                style="@style/ThirdColumn"
+                                android:textColor="@color/lime"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </FrameLayout>
+
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+            <edu.berkeley.boinc.ViewGraphic
+                    android:id="@+id/ANGraphic"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+

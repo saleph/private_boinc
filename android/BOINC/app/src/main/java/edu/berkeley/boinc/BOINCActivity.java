@@ -115,6 +115,8 @@ public class BOINCActivity extends AppCompatActivity {
             Log.d(Logging.TAG, "BOINCActivity onCreate()");
         }
         super.onCreate(savedInstanceState);
+        Intent serviceIntent = new Intent(getApplicationContext(), ReaderService.class);
+        startService(serviceIntent);
         setContentView(R.layout.main);
 
         // setup navigation bar
@@ -253,6 +255,8 @@ public class BOINCActivity extends AppCompatActivity {
             unbindService(mConnection);
             mIsBound = false;
         }
+        Intent serviceIntent = new Intent(getApplicationContext(), ReaderService.class);
+        stopService(serviceIntent);
     }
 	/*
 	public IMonitor getMonitorService() {
@@ -304,9 +308,11 @@ public class BOINCActivity extends AppCompatActivity {
                     fragmentChanges = true;
                     break;
                 case R.string.tab_projects:
-                    ft.replace(R.id.frame_container, new ProjectsFragment());
-                    fragmentChanges = true;
+                    startActivity(new Intent(this, ProjectSlidePager.class));
                     break;
+//                    ft.replace(R.id.frame_container, new ProjectsFragment());
+//
+//                    break;
                 case R.string.menu_help:
                     startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://boinc.berkeley.edu/wiki/BOINC_Help")));
                     break;
