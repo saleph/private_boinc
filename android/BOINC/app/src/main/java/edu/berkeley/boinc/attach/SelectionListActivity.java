@@ -285,6 +285,8 @@ public class SelectionListActivity extends FragmentActivity {
                 return;
             }
 
+            boolean isProjectFromUrl = true;
+            SelectionListActivity.this.entries.add(new ProjectListEntry(isProjectFromUrl));
             SelectionListActivity.this.entries.add(new ProjectListEntry()); // add account manager option to bottom of list
             SelectionListAdapter listAdapter =
                     new SelectionListAdapter(SelectionListActivity.this, R.id.listview, entries);
@@ -311,6 +313,7 @@ public class SelectionListActivity extends FragmentActivity {
          * @see Collator
          */
         static Collator collator;
+        public boolean projectFromUrl;
 
         public ProjectListEntry(ProjectInfo info) {
             this.info = info;
@@ -322,6 +325,14 @@ public class SelectionListActivity extends FragmentActivity {
          */
         public ProjectListEntry() {
             this.am = true;
+        }
+
+
+        /**
+         * Creates "projectFromUrl" list object
+         */
+        public ProjectListEntry(boolean isProjectFromUrl) {
+            this.projectFromUrl = isProjectFromUrl;
         }
 
         /**

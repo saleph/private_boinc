@@ -3,7 +3,6 @@
               android:id="@+id/LParent"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@color/GrayMyPlaces"
               android:orientation="vertical">
 
     <LinearLayout
@@ -161,7 +160,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1">
 
-            <edu.berkeley.boinc.ViewGraphic
+            <edu.berkeley.boinc.DeviceUsagePlotDrawer
                     android:id="@+id/ANGraphic"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>

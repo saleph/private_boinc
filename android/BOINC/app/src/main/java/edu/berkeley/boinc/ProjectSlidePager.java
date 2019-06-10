@@ -49,7 +49,7 @@ public class ProjectSlidePager extends FragmentActivity {
                 case 0:
                     return new ProjectsFragment();
                 case 1:
-                    return new Memorycostamcostam(fragmentActivity);
+                    return new MemoryStatisticsPresenter(fragmentActivity);
             }
             return null;
         }

@@ -22,7 +22,7 @@ import java.util.List;
 
 import static java.lang.Math.floor;
 
-public class ViewGraphic extends TextureView {
+public class DeviceUsagePlotDrawer extends TextureView {
 
     private boolean graphicInitialized;
     private int yTop;
@@ -63,7 +63,7 @@ public class ViewGraphic extends TextureView {
     private Canvas canvas;
 
 
-    public ViewGraphic(Context context, AttributeSet attrs) {
+    public DeviceUsagePlotDrawer(Context context, AttributeSet attrs) {
         super(context, attrs);
         resources = getResources();
         float density = resources.getDisplayMetrics().density;

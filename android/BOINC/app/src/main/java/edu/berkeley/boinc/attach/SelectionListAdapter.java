@@ -20,6 +20,8 @@ package edu.berkeley.boinc.attach;
 
 import java.util.ArrayList;
 
+import android.content.Intent;
+import edu.berkeley.boinc.EventLogActivity;
 import edu.berkeley.boinc.R;
 import edu.berkeley.boinc.attach.SelectionListActivity.ProjectListEntry;
 import edu.berkeley.boinc.utils.Logging;
@@ -81,6 +83,28 @@ public class SelectionListAdapter extends ArrayAdapter<ProjectListEntry> {
                     AcctMgrFragment dialog = new AcctMgrFragment();
                     dialog.setReturnToMainActivity(); // configure, so dialog returns to main activity when finished
                     dialog.show(activity.getSupportFragmentManager(), activity.getString(R.string.attachproject_acctmgr_header));
+                }
+            };
+            v.setOnClickListener(listener);
+            name.setOnClickListener(listener);
+            description.setOnClickListener(listener);
+            button.setOnClickListener(listener);
+        } else if (listItem.projectFromUrl) {
+            // element is projectFromUrl option
+            name.setText(activity.getString(R.string.attachproject_from_url_header));
+            description.setText(activity.getString(R.string.attachproject_from_url_list_desc));
+            cb.setVisibility(View.GONE);
+            summary.setVisibility(View.GONE);
+            ImageView button = v.findViewById(R.id.am_button_image);
+            button.setVisibility(View.VISIBLE);
+            OnClickListener listener = new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(Logging.DEBUG) {
+                        Log.d(Logging.TAG, "SelectionListAdapter: project from url clicked.");
+                    }
+                    ManualUrlInputFragment dialog2 = new ManualUrlInputFragment();
+                    dialog2.show(activity.getSupportFragmentManager(), activity.getString(R.string.attachproject_list_manual_button));
                 }
             };
             v.setOnClickListener(listener);

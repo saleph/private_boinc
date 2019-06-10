@@ -16,7 +16,7 @@ import java.text.DecimalFormat;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class Memorycostamcostam extends Fragment {
+public class MemoryStatisticsPresenter extends Fragment {
 
     private final Activity context;
     private AtomicBoolean isCanvasLocked = new AtomicBoolean(false);
@@ -35,7 +35,7 @@ public class Memorycostamcostam extends Fragment {
     private DecimalFormat memoryTakenFormat = new DecimalFormat("##,###,##0");
     private DecimalFormat memoryTakenPercentageFormat = new DecimalFormat("##0.0");
 
-    private ViewGraphic plotViewGraphic;
+    private DeviceUsagePlotDrawer plotViewGraphic;
     private ReaderService readerService;
     private Handler memoryTextViewsRefreshHandler = new Handler();
     private Handler plotRefreshHandler = new Handler();
@@ -100,7 +100,7 @@ public class Memorycostamcostam extends Fragment {
         }
     };
 
-    public Memorycostamcostam(Activity context) {
+    public MemoryStatisticsPresenter(Activity context) {
         super();
         this.context = context;
     }
