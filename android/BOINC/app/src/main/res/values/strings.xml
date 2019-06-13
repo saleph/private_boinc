@@ -425,4 +425,19 @@
     </string>
     <string name="social_invite_content_url_amazon">http://www.amazon.com/gp/mas/dl/android?p=edu.berkeley.boinc
     </string>
+
+    <string name="p_memtotal">Memory</string>
+    <string name="p_memused">Mem used</string>
+    <string name="p_memavailable">Mem available</string>
+    <string name="p_memfree">MemFree</string>
+    <string name="p_cached">Cached</string>
+    <string name="p_threshold">Threshold</string>
+    <string name="p_kb">- kB</string>
+    <string name="p_percentage">-%</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lorem_ipsum">lorem ipsum costam costam</string>
+    <string name="attachproject_from_url_header">Add project from URL</string>
+    <string name="attachproject_from_url_list_desc">Add project from custom URL. This can be also IP address of some unofficial BOINC server</string>
 </resources>

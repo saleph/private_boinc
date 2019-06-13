@@ -45,11 +45,11 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.support.v4.app.ActionBarDrawerToggle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
+import androidx.legacy.app.ActionBarDrawerToggle;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.AppCompatActivity;
 
 import edu.berkeley.boinc.adapter.NavDrawerListAdapter;
 import edu.berkeley.boinc.adapter.NavDrawerListAdapter.NavDrawerItem;
@@ -115,6 +115,8 @@ public class BOINCActivity extends AppCompatActivity {
             Log.d(Logging.TAG, "BOINCActivity onCreate()");
         }
         super.onCreate(savedInstanceState);
+        Intent serviceIntent = new Intent(getApplicationContext(), ReaderService.class);
+        startService(serviceIntent);
         setContentView(R.layout.main);
 
         // setup navigation bar
@@ -253,6 +255,8 @@ public class BOINCActivity extends AppCompatActivity {
             unbindService(mConnection);
             mIsBound = false;
         }
+        Intent serviceIntent = new Intent(getApplicationContext(), ReaderService.class);
+        stopService(serviceIntent);
     }
 	/*
 	public IMonitor getMonitorService() {
@@ -304,9 +308,11 @@ public class BOINCActivity extends AppCompatActivity {
                     fragmentChanges = true;
                     break;
                 case R.string.tab_projects:
-                    ft.replace(R.id.frame_container, new ProjectsFragment());
-                    fragmentChanges = true;
+                    startActivity(new Intent(this, ProjectSlidePager.class));
                     break;
+//                    ft.replace(R.id.frame_container, new ProjectsFragment());
+//
+//                    break;
                 case R.string.menu_help:
                     startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://boinc.berkeley.edu/wiki/BOINC_Help")));
                     break;

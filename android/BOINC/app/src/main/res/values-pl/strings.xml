@@ -355,4 +355,6 @@
     <!--first parameter: device manufacturer, second: URL-->
     <string name="social_invite_content_url_google">https://play.google.com/store/apps/details?id=edu.berkeley.boinc</string>
     <string name="social_invite_content_url_amazon">http://www.amazon.com/gp/mas/dl/android?p=edu.berkeley.boinc</string>
+    <string name="attachproject_from_url_header">Dodaj projekt z URL</string>
+    <string name="attachproject_from_url_list_desc">Dodaj projekt z własnego URL. Może nim być także adres IP serwera, który hostuje nieoficjalny serwer BOINC</string>
 </resources>
